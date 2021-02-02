@@ -20,8 +20,7 @@ let question = prompt('Введите язык недели, "en", "ru"');
 let result = (question === 'en') ? console.log(arr.en) :
              (question === 'ru') ?  console.log(arr.ru):
              console.log('Неизвестный язык');
-
-
+             
 let namePerson = null;
   let answer = (namePerson === 'Артем') ? console.log('директор'):
   (namePerson === 'Максим') ? console.log('преподаватель'):
