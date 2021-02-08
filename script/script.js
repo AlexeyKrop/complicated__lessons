@@ -7,7 +7,7 @@ if(arr[i].startsWith('2') || arr[i].startsWith('4')) {
 }
 
 
-let n = 100;
+let n = 110;
 let count = 0;
 
 for(let i = 2; i <= n; i++){
