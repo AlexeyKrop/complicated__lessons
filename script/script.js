@@ -7,13 +7,13 @@ let months = ["Января",	"Февраля", "Марта", "Апреля", "�
 
 
 let clock = function() {
-  let mytime = new Date();
-  let seconds = mytime.getSeconds();
-  let minutes = mytime.getMinutes();
-  let hours = mytime.getHours();
-  let today =  mytime.getDay() - 1;
-  let month = mytime.getMonth();
-  let year = mytime.getFullYear();
+  let nowDate = new Date();
+  let seconds = nowDate.getSeconds();
+  let minutes = nowDate.getMinutes();
+  let hours = nowDate.getHours();
+  let today =  nowDate.getDay() - 1;
+  let month = nowDate.getMonth();
+  let year = nowDate.getFullYear();
 
   let getHour = function(number){
     if(number >= 5 && number <= 20 || number === 0){
@@ -49,9 +49,9 @@ return seconds + " секунда ";
 }
 };
 getSeconds(seconds);
-  let currentTime = "Сегодня " + days[today] + ", " + mytime.getDate() + " " + months[month] + " " + year + " года , " + getHour(hours) + getMinute(minutes) + getSeconds(seconds);
+  let currentTime = "Сегодня " + days[today] + ", " + nowDate.getDate() + " " + months[month] + " " + year + " года , " + getHour(hours) + getMinute(minutes) + getSeconds(seconds);
   document.getElementById("Timer").firstChild.nodeValue = currentTime;
-}
+};
 
 setInterval(clock, 1000);
 
@@ -74,7 +74,8 @@ function dateTime(){
   let hours = zeroFormat(nowDay.getHours());
   let minutes = zeroFormat(nowDay.getMinutes());
   let seconds = zeroFormat(nowDay.getSeconds());
-//   console.log(day + "." + month + "." + year + " - " + hours + ":" + minutes + ":" + seconds);
+  let timeInAnotherFormat = day + "." + month + "." + year + " - " + hours + ":" + minutes + ":" + seconds;
+  document.getElementById("another__timer").firstChild.nodeValue = timeInAnotherFormat;
 }
 
 setInterval(dateTime, 1000);
